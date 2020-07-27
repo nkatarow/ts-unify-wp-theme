@@ -1,0 +1,179 @@
+/* ==========================================================================
+   COMPONENTS/_MOBILE-NAVIGATION.SCSS
+   ========================================================================== */
+
+header {
+	width: 100%;
+	
+	.top-bar {
+		@include clearfix();
+    height: 60px;
+		margin-top: 3px;
+		max-width: $max-width;
+		position: absolute;
+		width: 100%;
+		z-index: 101;
+		
+		.logo {
+      @include center(vertical);
+			display: inline-block;
+			height: 34px;
+			left: $space;
+			margin: 0;
+			width: 90px;
+
+			svg {
+				height: 34px;
+				width: 90px;
+
+				.st0 { 
+					fill: $navy; 
+					transition: fill 250ms ease;
+				}
+			}
+			
+			&:hover svg .st0,
+			&:focus svg .st0 { fill: $aqua; }
+			
+			&.active svg .st0 { fill: $white; }
+		}
+		
+		.page-title { display: none; }
+    
+		.hamburger { 
+      @include center(vertical);
+      right: 0; 
+    }
+	}
+	
+	#primary {
+		background-color: $navy;
+		background-image: url(/wp-content/themes/unify/_ui/img/global/pattern.svg);
+		background-repeat: repeat;
+		border-top: 3px solid $aqua;
+		border-bottom: 3px solid $aqua;
+		display: block;
+		height: calc(100vh + 3px);
+		left: 0;
+    overflow-x: hidden;
+		position: absolute;
+		top: -100vh;
+		transition: top 250ms ease;
+		width: 100vw;
+    z-index: 100;
+	
+		a { 
+			color: $white; 
+			font-family: $pt-serif;
+		
+			&:hover,
+			&focus {
+				color: $aqua;
+			}
+		}
+
+		&.active {  top: -3px; }
+		
+		> div {
+			margin: 90px $space;
+			max-width: $max-width;
+      opacity: 0;
+	    transition: opacity 250ms ease;
+      
+			.nav-main { 
+        ul { 
+          margin-left: 0; 
+          list-style: none;
+        }
+      }
+			
+			.secondary {
+        ul {
+          margin: 0 0 $space-and-half 0; 
+          list-style: none;
+        }
+        
+				h2 { 
+          font-family: $circular;
+          margin: $space-double 0 $space-half; 
+        }
+			}
+		}
+	}
+}
+
+// If we're logged in and the admin bar is showing, move everying down for it.
+// .logged-in header #primary { bottom: calc(100vh - 49px); }
+
+
+@media screen and (min-width: $bp-large) {
+	header {
+		.top-bar {
+			left: 50%;
+			height: 90px;
+			margin: 6px auto;
+			text-align: center;
+			transform: translateX(-50%);
+			
+			.logo {
+				margin: $space 0;
+				height: 49px;
+				width: 130px;
+				
+				svg {
+					height: 49px;
+					width: 130px;
+				}
+			
+        &.active + .page-title { opacity: 0; }
+      }
+
+			.hamburger { margin-top: $space; }
+			
+			.page-title { 
+      	color: $navy;
+				display: inline-block;
+				font-family: $pt-serif;
+				font-size: 1.8em;
+				font-weight: 300;
+				padding-top: $space-double;
+				text-align: center;
+			}
+			
+		}
+	
+		#primary {
+			border-width: 6px;
+			height: calc(100vh + 6px);
+			
+			&.active { top: -6px; }
+		
+			> div {
+				@include center(horizontal);
+				display: flex;
+				margin: 0 $space;
+        padding: 120px 0;
+				width: 100%;
+
+				.nav-main { width: 50%; }
+				
+				.secondary { 
+					width: 50%; 
+
+					h2 { margin: $space-triple 0 $space; }
+				}
+			}
+		}
+	}
+
+	// If we're logged in and the admin bar is showing, move everying down for it.
+	// .logged-in header #primary { bottom: calc(100vh - 35px); }
+}
+
+@media screen and (min-width: $bp-large-2) and (min-height: $bp-large) {
+	header {
+    #primary {
+	    > div { @include center(all); }
+    }
+  }
+}

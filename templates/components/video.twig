@@ -1,0 +1,13 @@
+{% block content %}
+<section class="video{% if module.set_as_background %} background{% endif %}{% if module.hero %} hero{% endif %}">
+  <div class="fitvid">
+    <iframe src="https://player.vimeo.com/video/{{ module.vimeo_video_id }}{% if module.set_as_background %}?background=1{% endif %}" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  </div>
+
+  {% if module.set_as_background %}
+    <div class="overlay">
+      {{ module.overlaid_text }}
+    </div>
+  {% endif %}
+</section>
+{% endblock %}

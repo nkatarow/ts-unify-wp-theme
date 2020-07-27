@@ -1,0 +1,276 @@
+{% block content %}
+  <style>
+    .desktop-only { display: none; }
+    @media screen and (min-width: 50em) {
+      .desktop-only { display: initial; }
+      .mobile-only { display: none; }
+    }
+  </style>
+	<div id="work-page-tabset">
+
+    <section class="tabbed-content">
+      <nav class="tabs container">
+        <ul>
+          <li><a href="#sales-marketing-service" class="level-4 active">Sales, Marketing, <span>&amp; Service</span></a></li>
+          <li><a href="#information-technology" class="level-4">Information Technology</a></li>
+          <li><a href="#human-resources" class="level-4">Human <span>Resources</span></a></li>
+          <li><a href="#finance-and-operations" class="level-4">Finance &amp; <span>Operations</span></a></li>
+        </ul>
+      </nav>
+
+      <div id="sales-marketing-service" class="item active" data-title="Sales, Marketing, &amp; Service">
+        <div class="item-content copy-block no-padding columns">
+          <div class="container flex two-columns">
+            <p class="level-3">{{ module.sales_marketing_and_service_tagline }}</p>
+            <p>{{ module.sales_marketing_and_service_description }}</p>
+          </div>
+
+          <div class="container padding-both flex three-columns">
+            <div>
+              <h3 class="level-4 aqua underline"><span class="mobile-only">Business Agility</span><span class="desktop-only">Business<br>Agility</span></h3>
+              <ul>
+                {% for capability in businessAgilityChildren %}
+                  {% for role in capability.functional_role %}
+                    {% if role == 'sales-marketing-service' %}
+                      <li><a href="{{ capability.link }}">> {{ capability.title }}</a></li>
+                    {% endif %}
+                  {% endfor %}
+                {% endfor %}
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="level-4 aqua underline"><span class="mobile-only">Data-Driven Insights</span><span class="desktop-only">Data-Driven<br>Insights</span></h3>
+              <ul>
+                {% for capability in dataDrivenInsightsChildren %}
+                  {% for role in capability.functional_role %}
+                    {% if role == 'sales-marketing-service' %}
+                      <li><a href="{{ capability.link }}">> {{ capability.title }}</a></li>
+                    {% endif %}
+                  {% endfor %}
+                {% endfor %}
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="level-4 aqua underline"><span class="mobile-only">Customer Experience</span><span class="desktop-only">Customer<br>Experience</span></h3>
+              <ul>
+                {% for capability in customerIngenuityChildren %}
+                  {% for role in capability.functional_role %}
+                    {% if role == 'sales-marketing-service' %}
+                      <li><a href="{{ capability.link }}">> {{ capability.title }}</a></li>
+                    {% endif %}
+                  {% endfor %}
+                {% endfor %}
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="level-4 aqua underline"><span class="mobile-only">Technology Enablement</span><span class="desktop-only">Technology<br>Enablement</span></h3>
+              <ul>
+                {% for capability in technologyEnablementChildren %}
+                  {% for role in capability.functional_role %}
+                    {% if role == 'sales-marketing-service' %}
+                      <li><a href="{{ capability.link }}">> {{ capability.title }}</a></li>
+                    {% endif %}
+                  {% endfor %}
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="information-technology" class="item" data-title="Information Technology">
+        <div class="item-content copy-block no-padding columns">
+          <div class="container flex two-columns">
+            <p class="level-3">{{ module.it_tagline }}</p>
+            <p>{{ module.it_description }}</p>
+          </div>
+
+          <div class="container padding-both flex three-columns">
+            <div>
+              <h3 class="level-4 aqua underline"><span class="mobile-only">Business Agility</span><span class="desktop-only">Business<br>Agility</span></h3>
+              <ul>
+                {% for capability in businessAgilityChildren %}
+                  {% for role in capability.functional_role %}
+                    {% if role == 'information-technology' %}
+                      <li><a href="{{ capability.link }}">> {{ capability.title }}</a></li>
+                    {% endif %}
+                  {% endfor %}
+                {% endfor %}
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="level-4 aqua underline"><span class="mobile-only">Data-Driven Insights</span><span class="desktop-only">Data-Driven<br>Insights</span></h3>
+              <ul>
+                {% for capability in dataDrivenInsightsChildren %}
+                  {% for role in capability.functional_role %}
+                    {% if role == 'information-technology' %}
+                      <li><a href="{{ capability.link }}">> {{ capability.title }}</a></li>
+                    {% endif %}
+                  {% endfor %}
+                {% endfor %}
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="level-4 aqua underline"><span class="mobile-only">Customer Experience</span><span class="desktop-only">Customer<br>Experience</span></h3>
+              <ul>
+                {% for capability in customerIngenuityChildren %}
+                  {% for role in capability.functional_role %}
+                    {% if role == 'information-technology' %}
+                      <li><a href="{{ capability.link }}">> {{ capability.title }}</a></li>
+                    {% endif %}
+                  {% endfor %}
+                {% endfor %}
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="level-4 aqua underline"><span class="mobile-only">Technology Enablement</span><span class="desktop-only">Technology<br>Enablement</span></h3>
+              <ul>
+                {% for capability in technologyEnablementChildren %}
+                  {% for role in capability.functional_role %}
+                    {% if role == 'information-technology' %}
+                      <li><a href="{{ capability.link }}">> {{ capability.title }}</a></li>
+                    {% endif %}
+                  {% endfor %}
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="human-resources" class="item" data-title="Human Resources">
+        <div class="item-content copy-block no-padding columns">
+          <div class="container flex two-columns">
+            <p class="level-3">{{ module.human_resources_tagline }}</p>
+            <p>{{ module.human_resources_description }}</p>
+          </div>
+
+          <div class="container padding-both flex three-columns">
+            <div>
+              <h3 class="level-4 aqua underline"><span class="mobile-only">Business Agility</span><span class="desktop-only">Business<br>Agility</span></h3>
+              <ul>
+                {% for capability in businessAgilityChildren %}
+                  {% for role in capability.functional_role %}
+                    {% if role == 'human-resources' %}
+                      <li><a href="{{ capability.link }}">> {{ capability.title }}</a></li>
+                    {% endif %}
+                  {% endfor %}
+                {% endfor %}
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="level-4 aqua underline"><span class="mobile-only">Data-Driven Insights</span><span class="desktop-only">Data-Driven<br>Insights</span></h3>
+              <ul>
+                {% for capability in dataDrivenInsightsChildren %}
+                  {% for role in capability.functional_role %}
+                    {% if role == 'human-resources' %}
+                      <li><a href="{{ capability.link }}">> {{ capability.title }}</a></li>
+                    {% endif %}
+                  {% endfor %}
+                {% endfor %}
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="level-4 aqua underline"><span class="mobile-only">Customer Experience</span><span class="desktop-only">Customer<br>Experience</span></h3>
+              <ul>
+                {% for capability in customerIngenuityChildren %}
+                  {% for role in capability.functional_role %}
+                    {% if role == 'human-resources' %}
+                      <li><a href="{{ capability.link }}">> {{ capability.title }}</a></li>
+                    {% endif %}
+                  {% endfor %}
+                {% endfor %}
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="level-4 aqua underline"><span class="mobile-only">Technology Enablement</span><span class="desktop-only">Technology<br>Enablement</span></h3>
+              <ul>
+                {% for capability in technologyEnablementChildren %}
+                  {% for role in capability.functional_role %}
+                    {% if role == 'human-resources' %}
+                      <li><a href="{{ capability.link }}">> {{ capability.title }}</a></li>
+                    {% endif %}
+                  {% endfor %}
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="finance-and-operations" class="item" data-title="Finance &amp; Operations">
+        <div class="item-content copy-block no-padding columns">
+          <div class="container flex two-columns">
+            <p class="level-3">{{ module.finance_operations_tagline }}</p>
+            <p>{{ module.finance_operations_description }}</p>
+          </div>
+
+          <div class="container padding-both flex three-columns">
+            <div>
+              <h3 class="level-4 aqua underline"><span class="mobile-only">Business Agility</span><span class="desktop-only">Business<br>Agility</span></h3>
+              <ul>
+                {% for capability in businessAgilityChildren %}
+                  {% for role in capability.functional_role %}
+                    {% if role == 'finance-and-operations' %}
+                      <li><a href="{{ capability.link }}">> {{ capability.title }}</a></li>
+                    {% endif %}
+                  {% endfor %}
+                {% endfor %}
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="level-4 aqua underline"><span class="mobile-only">Data-Driven Insights</span><span class="desktop-only">Data-Driven<br>Insights</span></h3>
+              <ul>
+                {% for capability in dataDrivenInsightsChildren %}
+                  {% for role in capability.functional_role %}
+                    {% if role == 'finance-and-operations' %}
+                      <li><a href="{{ capability.link }}">> {{ capability.title }}</a></li>
+                    {% endif %}
+                  {% endfor %}
+                {% endfor %}
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="level-4 aqua underline"><span class="mobile-only">Customer Experience</span><span class="desktop-only">Customer<br>Experience</span></h3>
+              <ul>
+                {% for capability in customerIngenuityChildren %}
+                  {% for role in capability.functional_role %}
+                    {% if role == 'finance-and-operations' %}
+                      <li><a href="{{ capability.link }}">> {{ capability.title }}</a></li>
+                    {% endif %}
+                  {% endfor %}
+                {% endfor %}
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="level-4 aqua underline"><span class="mobile-only">Technology Enablement</span><span class="desktop-only">Technology<br>Enablement</span></h3>
+              <ul>
+                {% for capability in technologyEnablementChildren %}
+                  {% for role in capability.functional_role %}
+                    {% if role == 'finance-and-operations' %}
+                      <li><a href="{{ capability.link }}">> {{ capability.title }}</a></li>
+                    {% endif %}
+                  {% endfor %}
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+{% endblock %}

@@ -1,0 +1,114 @@
+/* ==========================================================================
+   BASE/_FONTS.SCSS
+   ========================================================================== */
+
+/*
+ * Legal Disclaimer
+ *
+ * These Fonts are licensed only for use on these domains and their subdomains:
+ * matisia.com
+ *
+ * It is illegal to download or use them on other websites.
+ *
+ * While the @font-face statements below may be modified by the client, this
+ * disclaimer may not be removed.
+ *
+ * Lineto.com, 2017
+ */
+
+
+/*
+ *
+ * INSTRUCTIONS
+ *
+ * Copy the Legal Disclaimer and the @font-faces statements to your regular CSS file.
+ * The fonts folder(s) should be placed relative to the regular CSS file.
+ *
+ * You can use either the complete or subsetted fonts:
+ * If you don’t require the entire range of characters, you can use the smaller, subsetted webfonts instead.
+ * See "Glyphs & Languages" for an overview of the characters in the *_subsetted.html file in the root directory of this package.
+ *
+ */
+
+@import url('https://fonts.googleapis.com/css?family=PT+Serif');
+ 
+@font-face {
+    font-family: "Circular";
+    src:url("/wp-content/themes/unify/_ui/fonts/lineto-circular-medium.eot");
+    src:url("/wp-content/themes/unify/_ui/fonts/lineto-circular-medium.eot?#iefix") format("embedded-opentype"),
+        url("/wp-content/themes/unify/_ui/fonts/lineto-circular-medium.woff2") format("woff2"),
+        url("/wp-content/themes/unify/_ui/fonts/lineto-circular-medium.woff") format("woff");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Circular";
+    src:url("/wp-content/themes/unify/_ui/fonts/lineto-circular-mediumitalic.eot");
+    src:url("/wp-content/themes/unify/_ui/fonts/lineto-circular-mediumitalic.eot?#iefix") format("embedded-opentype"),
+        url("/wp-content/themes/unify/_ui/fonts/lineto-circular-mediumitalic.woff2") format("woff2"),
+        url("/wp-content/themes/unify/_ui/fonts/lineto-circular-mediumitalic.woff") format("woff");
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Circular";
+    src:url("/wp-content/themes/unify/_ui/fonts/lineto-circular-bold.eot");
+    src:url("/wp-content/themes/unify/_ui/fonts/lineto-circular-bold.eot?#iefix") format("embedded-opentype"),
+        url("/wp-content/themes/unify/_ui/fonts/lineto-circular-bold.woff2") format("woff2"),
+        url("/wp-content/themes/unify/_ui/fonts/lineto-circular-bold.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Circular";
+    src:url("/wp-content/themes/unify/_ui/fonts/lineto-circular-bolditalic.eot");
+    src:url("/wp-content/themes/unify/_ui/fonts/lineto-circular-bolditalic.eot?#iefix") format("embedded-opentype"),
+        url("/wp-content/themes/unify/_ui/fonts/lineto-circular-bolditalic.woff2") format("woff2"),
+        url("/wp-content/themes/unify/_ui/fonts/lineto-circular-bolditalic.woff") format("woff");
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Circular";
+    src:url("/wp-content/themes/unify/_ui/fonts/lineto-circular-black.eot");
+    src:url("/wp-content/themes/unify/_ui/fonts/lineto-circular-black.eot?#iefix") format("embedded-opentype"),
+        url("/wp-content/themes/unify/_ui/fonts/lineto-circular-black.woff2") format("woff2"),
+        url("/wp-content/themes/unify/_ui/fonts/lineto-circular-black.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Circular-Blackitalic";
+    src:url("/wp-content/themes/unify/_ui/fonts/lineto-circular-blackitalic.eot");
+    src:url("/wp-content/themes/unify/_ui/fonts/lineto-circular-blackitalic.eot?#iefix") format("embedded-opentype"),
+        url("/wp-content/themes/unify/_ui/fonts/lineto-circular-blackitalic.woff2") format("woff2"),
+        url("/wp-content/themes/unify/_ui/fonts/lineto-circular-blackitalic.woff") format("woff");
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Circular-Book";
+    src:url("/wp-content/themes/unify/_ui/fonts/lineto-circular-book.eot");
+    src:url("/wp-content/themes/unify/_ui/fonts/lineto-circular-book.eot?#iefix") format("embedded-opentype"),
+        url("/wp-content/themes/unify/_ui/fonts/lineto-circular-book.woff2") format("woff2"),
+        url("/wp-content/themes/unify/_ui/fonts/lineto-circular-book.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Circular-Book";
+    src:url("/wp-content/themes/unify/_ui/fonts/lineto-circular-bookitalic.eot");
+    src:url("/wp-content/themes/unify/_ui/fonts/lineto-circular-bookitalic.eot?#iefix") format("embedded-opentype"),
+        url("/wp-content/themes/unify/_ui/fonts/lineto-circular-bookitalic.woff2") format("woff2"),
+        url("/wp-content/themes/unify/_ui/fonts/lineto-circular-bookitalic.woff") format("woff");
+    font-weight: normal;
+    font-style: italic;
+}
+

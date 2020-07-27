@@ -1,0 +1,12 @@
+{% block content %}
+	<section class="owl-carousel">
+		{% for row in module.slide %}
+      <figure>
+  			<img src="{{TimberImage(row.image).src}}" alt="{{TimberImage(row.image).alt}}" />
+        {% if TimberImage(row.image).caption %}  
+          <figcaption>{{ TimberImage(row.image).caption }}</figcaption>
+        {% endif %}
+      </figure>
+		{% endfor %}
+	</section>
+{% endblock %}

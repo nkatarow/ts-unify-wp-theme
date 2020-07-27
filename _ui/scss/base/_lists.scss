@@ -1,0 +1,40 @@
+/* ==========================================================================
+BASE/_LISTS.SCSS
+========================================================================== */
+
+
+// Basic Lists
+ol, ul {
+  font-family: $book;
+  font-size: 1.4em;
+
+  // p, ol, ul { font-size: 1em; }
+  .article-body ul { font-size: 1.4em; }
+}
+
+ol, ul { margin-left: 1em; }
+
+// Definition Lists
+dl {
+  overflow: hidden;
+  margin: 0 0 $space;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-left: 0;
+}
+
+@media screen and (min-width: $bp-large) {
+  // Basic Lists
+  ol, ul { 
+    // font-size: 1.6em; 
+    // 
+    // p, ol, ul { font-size: 1em; }
+  }    
+  .article-body ul { font-size: 1.6em; }
+
+}

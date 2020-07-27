@@ -1,0 +1,56 @@
+{% block content %}
+	{% for module in post.get_field('modules') %}
+	  {% if module.acf_fc_layout == 'repeatable_boxes' %}
+		  {% include "/templates/components/repeatable_boxes.twig" %}
+
+	  {% elseif module.acf_fc_layout == 'large_image_with_box' %}
+			{% include "/templates/components/large_image_with_box.twig" %}
+
+	  {% elseif module.acf_fc_layout == 'carousel' %}
+			{% include "/templates/components/carousel.twig" %}
+
+	  {% elseif module.acf_fc_layout == 'split_width_image' %}
+			{% include "/templates/components/split-width-image.twig" %}
+
+	  {% elseif module.acf_fc_layout == 'logo_soup' %}
+			{% include "/templates/components/logo-soup.twig" %}
+
+	  {% elseif module.acf_fc_layout == 'copy_block' %}
+			{% include "/templates/components/copy-block.twig" %}
+
+	  {% elseif module.acf_fc_layout == 'insights_slider' %}
+			{% include "/templates/components/insights-slider.twig" %}
+
+	  {% elseif module.acf_fc_layout == 'insights_list' %}
+			{% include "/templates/components/insights-list.twig" %}
+
+		{% elseif module.acf_fc_layout == 'people_list' %}
+			{% include "/templates/components/people-list.twig" %}
+
+	  {% elseif module.acf_fc_layout == 'image' %}
+			{% include "/templates/components/image.twig" %}
+
+	  {% elseif module.acf_fc_layout == 'columns' %}
+			{% include "/templates/components/columns.twig" %}
+
+	  {% elseif module.acf_fc_layout == 'people_slider' %}
+			{% include "/templates/components/people-slider.twig" %}
+
+	  {% elseif module.acf_fc_layout == 'instagram_feed' %}
+			{% include "/templates/components/instafeed.twig" %}
+
+	  {% elseif module.acf_fc_layout == 'video' %}
+			{% include "/templates/components/video.twig" %}
+
+	  {% elseif module.acf_fc_layout == 'work_page_tabset' %}
+			{% include "/templates/components/work-page-tabset.twig" %}
+
+	  {% elseif module.acf_fc_layout == 'careers_listing' %}
+			{% include "/templates/components/careers-listing.twig" %}
+
+	  {% elseif module.acf_fc_layout == 'three_forces' %}
+			{% include "/templates/components/three-forces.twig" %}
+
+	  {% endif %}
+	{% endfor %}
+{% endblock %}

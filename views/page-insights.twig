@@ -1,0 +1,35 @@
+{% extends "base.twig" %}
+
+{% block content %}
+  <section id="insights-landing">
+    <div class="container margin-both sixty-five-percent-width">
+      {{ post.content }}
+    </div>
+    <div class="container filters">
+      <select id="insights-filter" class="advanced-filter-menu" data-type="select" data-parameter="category">
+        <option value="">Categories</option>
+
+        {% for cat in categories %}
+          {% if currentCategory == cat.name|lower|replace({' ': '-'}) %}
+            {% set selected = " selected" %}
+          {% else %}
+            {% set selected = "" %}
+          {% endif %}
+
+          {% if cat.count > 0 and cat.parent == 0 %}
+            <option value="{{ cat.name|lower|replace({' ': '-'}) }}"{{ selected }}>{{ cat.name }}</option>
+          {% endif %}
+        {% endfor %}
+      </select>
+
+      <form class="" action="{{ post.get_permalink }}" method="post">
+        <input id="insights-search" type="text" name="search" value="{{ searchTerm }}" placeholder="Search">
+        <button type="submit" name="button">Search</button>
+      </form>
+    </div>
+
+    {{ function('do_shortcode', insightsResults) }}
+  </section>
+
+  {% include "/templates/components/flexible-content-modules.twig" %}
+{% endblock %}

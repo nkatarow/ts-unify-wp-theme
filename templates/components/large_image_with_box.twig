@@ -1,0 +1,20 @@
+{% block content %}
+	<section class="large-image-with-box" style="background-image: url({{TimberImage(module.background_image).src}});">
+		<div class="container">
+      {% if module.is_box_a_link %}
+  			<a href="{{ module.link_to.url }}" class="box" target="{{ module.link_to.target }}">
+  		{% else %}
+  			<div class="box">
+  		{% endif %}
+
+  			<h2 class="level-2">{{ module.headline }}</h2>
+
+  		{% if module.is_box_a_link %}
+  			<span class="text-button">{{ module.link_to.title }}</span>
+  			</a>
+  		{% else %}
+  			</div>
+  		{% endif %}
+    </div>
+	</section>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% block content %}
+	<section class="split-width-image {{ module.image_alignment }} {{ module.color_scheme }}">
+		<div class="img" style="background-image: url({{TimberImage(module.image).src}});"></div>
+		
+		<div class="content">
+			<div>{{ module.supporting_content }}</div>
+		</div>
+	</section>
+{% endblock %}

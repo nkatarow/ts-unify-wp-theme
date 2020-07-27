@@ -1,0 +1,49 @@
+/* ==========================================================================
+   HELPERS/_VARIABLES.SCSS
+   ========================================================================== */
+
+//Brand Colors
+$aqua: #1dc2bb;
+$navy: #143250;
+
+//Neutral Colors
+$white: #ffffff;
+$off-white: #f9f9f9;
+$light-gray: #e6e6e6;
+$gray: #c2c2c2;
+$dark-gray: #69747c;
+$black: #000000;
+
+//Utility Colors
+$yellow: #fced1e;
+
+//Typography
+$circular: "Circular", Helvetica, Sans-Serif;
+$book: "Circular-Book", Arial, Sans-Serif;
+$pt-serif: "PT Serif", serif;
+
+//Layout
+$max-width: 1180px;
+
+//Spacing
+$space: 1em;
+$space-and-half: $space*1.5;
+$space-double: $space*2;
+$space-triple: $space*3;
+$space-quad: $space*4;
+$space-half: $space/2;
+$space-quarter: $space/4;
+$mobile-buffer: $space*6; 
+$desktop-buffer: $space*10;
+
+//Breakpoints
+$bp-small: 24em; // 384px
+$bp-small-2: 29.75em; // 476px
+$bp-small-3: 39.8em; // 636.8px
+$bp-med: 46.8em; // 748.8px
+$bp-med-2: 48em; // 768px
+$bp-large: 50em; // 800px
+$bp-large-2: 66em; // 1056px
+$bp-xl: 73em; // 1168px
+$bp-xxl: 78em; //1248px
+$bp-xxxl: 93em; // 1488px

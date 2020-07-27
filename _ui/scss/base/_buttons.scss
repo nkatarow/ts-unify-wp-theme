@@ -1,0 +1,84 @@
+/* ==========================================================================
+BASE/_BUTTONS.SCSS
+========================================================================== */
+
+button,
+.button {
+  background-color: $navy;
+  border: 0;
+  color: $white;
+  cursor: pointer;
+  display: block;
+  font-size: 1.4em;
+  font-weight: 500;
+  letter-spacing: 1px;
+  line-height: 1;
+  padding: $space $space-triple;
+  text-align: center;
+  text-transform: uppercase;
+  transition: background-color 250ms ease-out;
+  
+  &:hover,
+  &:focus {
+    background-color: $aqua;
+    color: $white;
+    cursor: pointer;
+  }
+}
+
+// Just in case these end up in a paragraph
+p button,
+p .button {
+  font-size: 1em;
+}
+
+// Or on a different color background 
+.aqua button,
+.aqua .button {
+  &:hover,
+  &:focus {
+    color: $navy;
+    background-color: $white;
+  }
+}
+
+.navy button,
+.navy .button {
+  background-color: $aqua;
+}
+
+.text-button {
+  color: $navy;
+  display: block;
+  font-size: 1.4em;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: color 250ms ease-out;
+  
+  &:hover,
+  &:focus {
+    color: $aqua;
+  }
+  
+  &::after {
+    font-family: 'iconfont';
+    font-size: 0.8em;
+    content: '\E003';
+    margin-left: $space;
+  }
+}
+
+// For when this style is used within a paragraph or other element with font-size already.
+p .text-button { font-size: 1em; }
+
+@media screen and (min-width: $bp-small-3) {
+  button,
+  .button {
+    display: inline-block;
+  }
+}
+
+@media screen and (min-width: $bp-large) {
+  p .button, p .text-button { font-size: 0.875em; }
+}

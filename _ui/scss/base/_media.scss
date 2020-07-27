@@ -1,0 +1,39 @@
+/* ==========================================================================
+BASE/_MEDIA.SCSS
+========================================================================== */
+
+
+img, video, object {
+  max-width: 100%;
+  height: auto;
+  
+  &.aligncenter { text-align: center; }
+}
+
+iframe { margin-bottom: $space; }
+
+figure {
+  position: relative;
+  
+  figcaption {
+    @extend p;
+    background-color: rgba(0,0,0,0.5);
+    bottom: 0;
+    color: $white;
+    display: block;
+    height: auto;
+    text-align: center;
+    margin-bottom: 0 !important;
+    position: absolute;
+    padding: $space-double;
+    width: 100%;
+  }
+}
+
+.image-block {
+  margin-bottom: -3px;
+  
+  img { width: 100%; }
+
+  figcaption { margin-bottom: 3px !important; }
+}

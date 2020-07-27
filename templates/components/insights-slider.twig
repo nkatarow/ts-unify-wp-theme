@@ -1,0 +1,25 @@
+{% block content %}
+
+<section class="insights-slider" style="background-image: url({{ TimberImage(module.background_image).src }});">
+  <div class="insights-carousel">
+
+    {% for article in insightsslider %}
+		  <a href="{{ article.link }}" class="box full">
+        <div>
+          <img src="{{ TimberImage(article.poster_image).src|resize(1180, 1180) }}" alt="{{ TimberImage(article.poster_image).alt }}">
+        </div>  
+
+        <div class="details">
+          <p class="trailing-line">{{ articleCategory }}</p>
+          <h2 class="level-2">{{ article.title }}</h2>
+          
+          {% if article.excerpt %}
+            <p>{{ article.excerpt }}</p>
+          {% endif %}
+        </div>
+      </a>
+    {% endfor %}
+
+  </div>
+</section>
+{% endblock %}

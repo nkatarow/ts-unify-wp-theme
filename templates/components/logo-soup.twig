@@ -1,0 +1,19 @@
+{% block content %}
+<section class="logo-soup {{ module.color_scheme }}">
+  <div class="container">
+    {% if module.description %}
+      <div class="description">
+        {{ module.description }}
+      </div>
+    {% endif %}
+    
+    <div class="logo-list">
+      {% for row in module.logos %}
+        <div class="img">
+          <img src="{{TimberImage(row.logo).src}}" alt="{{TimberImage(row.logo).alt}}" />
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

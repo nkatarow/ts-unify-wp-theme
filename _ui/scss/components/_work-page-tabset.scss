@@ -1,0 +1,124 @@
+/* ==========================================================================
+COMPONENTS/_WORK-PAGE-TABSET.SCSS
+========================================================================== */
+
+// Accordion for small screens (mobile first principle)
+.tabbed-content {
+  border-top: 1px solid $gray;
+
+  .tabs { display: none; }
+  
+  .item {
+    border-bottom: 1px solid $gray;
+    min-height: 2em; // We need a minimum height for each item or else the accordion buttons would dissapear
+    
+    &::before { 
+      @extend .level-4;
+      content: attr(data-title); 
+      display: block;
+      padding: $space;
+    }
+    
+    .item-content { // We hide the inactive content with zero opacity instead of "display:none" because this allows us to apply transition effects if we want. 
+      height: 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 250ms ease-out;
+      
+      .level-3 { margin-bottom: $space; }
+
+      ul {
+        margin: $space-double 0 0 0;
+        list-style: none;
+        
+        a { 
+          color: $navy;
+          display: block;
+          font-size: 16px; 
+          padding: $space-half;
+          transition: background-color 250ms ease-out;
+          
+          &:hover,
+          &:focus {
+            background-color: $yellow;
+          }
+        }
+      }
+    }
+    
+    &.active {
+      &::before { 
+        background-color: $off-white;
+        color: $aqua;
+        padding-top: $space*4; 
+      }
+      
+      .item-content {
+        background-color: $off-white;
+        height: auto;
+        opacity: 1;
+        padding-bottom: $mobile-buffer; 
+        visibility: visible;
+      }
+    }
+  }  
+}
+
+@media all and (min-width: $bp-large) {
+  .tabbed-content {
+    border-top: 0;
+    
+    .tabs {
+      background-color: $white;
+      display: block;
+      
+      ul { margin-left: 0; }
+      
+      li {
+        display: inline-block;
+        width: 24%;
+        
+        a { 
+          border-bottom: 14px solid transparent;
+          color: $navy;
+          display: block; 
+          padding-bottom: $space-half;
+          text-align: center;
+          
+          span { display: block; }
+
+          &:hover,
+          &:focus {
+            color: $aqua;
+          }
+
+          &.active { 
+            border-color: $aqua; 
+            color: $aqua; 
+          }
+        }
+      }
+    }
+    
+    .item {
+      background-color: $off-white;
+      border-bottom: 0;
+      margin: 0;
+      min-height: 0;
+      
+      &::before { display: none; }
+      
+      .item-content { 
+        top: 0; 
+
+        ul {
+          a { font-size: 16px; }
+        }
+      }
+
+      &.active { 
+        .item-content { padding: $mobile-buffer 0 $space-double; }
+      }
+    }
+  }    
+}

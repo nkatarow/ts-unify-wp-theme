@@ -1,0 +1,72 @@
+/* ==========================================================================
+   BASE/_SPLIT-WIDTH-IMAGE.SCSS
+   ========================================================================== */
+
+.split-width-image {
+	display: flex;
+	flex-direction: column;
+
+	&.navy {  
+		color: $white;
+    background-color: $navy; 
+  }
+	
+	&.aqua { 
+		color: $white;
+		background-color: $aqua; 
+	
+		.circ-trailing-line { color: $navy; }
+	}
+
+	&.light-gray { background-color: $off-white; }
+	
+	.img { 
+		background-size: cover;
+		background-position: center center; 
+		min-height: 100vw;
+		width: 100%; 
+	}
+	
+	.content {
+		padding: $space*4 $space-double $space*3;
+		width: 100%;
+	}
+}
+
+
+@media screen and (min-width: $bp-large-2) {
+	.split-width-image {
+		flex-direction: row;
+
+		&.right .img { order: 2; }
+	
+		.img { 
+			min-height: 50vw;
+			width: 50%; 
+		}
+		
+		.content {
+			padding: $space*4;
+			position: relative;
+			min-height: 50vw;
+			width: 50%;
+		
+			> div { 
+				@include center(vertical);
+				max-width: 440px; 
+			}
+		}
+	}
+}
+
+
+@media screen and (min-width: $bp-xl) {
+	.split-width-image {
+		.content {
+			> div { 
+				@include center(all);
+				min-width: 440px; 
+			}
+		}
+	}
+}

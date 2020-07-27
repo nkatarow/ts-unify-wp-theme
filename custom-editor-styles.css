@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Serif');
+
+@font-face {
+    font-family: "Circular";
+    src:url("/wp-content/themes/unify/_ui/fonts/lineto-circular-bold.eot");
+    src:url("/wp-content/themes/unify/_ui/fonts/lineto-circular-bold.eot?#iefix") format("embedded-opentype"),
+        url("/wp-content/themes/unify/_ui/fonts/lineto-circular-bold.woff2") format("woff2"),
+        url("/wp-content/themes/unify/_ui/fonts/lineto-circular-bold.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Circular";
+    src:url("/wp-content/themes/unify/_ui/fonts/lineto-circular-bolditalic.eot");
+    src:url("/wp-content/themes/unify/_ui/fonts/lineto-circular-bolditalic.eot?#iefix") format("embedded-opentype"),
+        url("/wp-content/themes/unify/_ui/fonts/lineto-circular-bolditalic.woff2") format("woff2"),
+        url("/wp-content/themes/unify/_ui/fonts/lineto-circular-bolditalic.woff") format("woff");
+    font-weight: 500;
+    font-style: italic;
+}
+
+.level-1 {
+  font-size: 3.6em;
+  font-family: "PT Serif", serif;
+  font-weight: 300;
+  line-height: 1.2em;
+  margin-bottom: 0;
+}
+
+.level-2 {
+  font-size: 2.8em;
+  font-family: "PT Serif", serif;
+  font-weight: 300;
+  line-height: 1.2em;
+  margin-bottom: 0;
+}
+
+.level-3 {
+  font-size: 2.1em;
+  font-family: "PT Serif", serif;
+  font-weight: 300;
+  line-height: 1.2em;
+  margin-bottom: 0;
+}
+
+.level-4 {
+  font-size: 1.8em;
+  font-family: "Circular";
+  font-weight: 500;
+  line-height: 1.2em;
+  margin-bottom: 0;
+}
+
+.level-5 {
+  font-size: 1.2em;
+  font-family: $circ;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  line-height: 1.2em;
+  font-family: "Circular";
+  margin-bottom: 0;
+}

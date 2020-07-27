@@ -1,0 +1,39 @@
+{% block content %}
+
+	<section class="insights-list repeatable-boxes {{ module.background_color }}">
+
+    <div class="container margin-bottom">
+
+      {% if post.post_type == 'bios' %}
+        <p><span class="full-width-level-5">Related Insights</span></p>
+      {% endif %}
+
+      <div class="flex">
+    		{% set count = 0 %}
+
+        {% for article in module.select_insights %}
+      			<a href="{{ article.link }}" class="box full insight">
+      				<img src="{{TimberImage(article.poster_image).src}}" alt="{{TimberImage(article.poster_image).alt}}" />
+
+              <p class="level-5">
+                {% for cat in article.categories %}
+                  {% if cat.parent == 0 %}
+                    <span>{{ cat.name }} </span>
+                  {% else %}
+                    {{ cat.name }}
+                  {% endif %}
+                {% endfor %}
+              </p>
+      				<p class="large">{{ article.title }}</p>
+      			</a>
+        {% endfor %}
+      </div>
+
+      {% if post.post_type != 'bios' %}
+        <div>
+          <a href="/insights" class="button">See More</a>
+        </div>
+      {% endif %}
+    </div>
+  </section>
+{% endblock %}

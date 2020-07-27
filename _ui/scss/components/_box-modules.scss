@@ -1,0 +1,191 @@
+/* ==========================================================================
+COMPONENTS/_BOX-MODULES.SCSS
+========================================================================== */
+
+// All boxes
+.box {
+  border-bottom: 6px solid $aqua;
+  display: inline-block;
+  margin-bottom: $space-double; 
+  padding: $space-double;
+  text-align: center;
+  transition: 
+    border-color 250ms ease-out,
+    box-shadow 250ms ease-out;
+  
+  &:last-child { margin-bottom: 0; }
+  
+  img { margin-bottom: $space; }
+  
+  h2 {
+    color: $navy;
+    margin-bottom: $space;
+  }
+  
+  p {
+    color: $dark-gray;
+    font-family: $book;
+    margin: 0 $space-and-half;
+  }
+  
+  &.full {
+    padding: 0;
+    
+    img { 
+      border: 0;
+      width: 100%; 
+    }
+    
+    > div { padding: $space-double; }
+  }
+}
+
+a.box {
+  box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.35);
+
+  &:hover,
+  &:focus {
+    border-bottom: 6px solid $yellow;
+    box-shadow: 0px 10px 30px 0px rgba(0,0,0,0.35);
+  }
+  
+  &.insight {
+    border-bottom: none; 
+    text-align: left; 
+    
+    img { 
+      border-bottom: 6px solid $aqua; 
+      transition: border-color 250ms ease-out;
+    }
+
+    &:hover,
+    &focus {
+      border-bottom: 0;
+      box-shadow: 0 0 0 0 rgba(0,0,0,0);
+
+      img { border-bottom: 6px solid $yellow; }
+    }
+  }
+
+  &.full {
+    &:hover,
+    &focus {
+      border-bottom: 6px solid $yellow;
+    }
+  }
+}
+
+// Repeatable boxes
+.repeatable-boxes {
+  padding: $mobile-buffer 0; 
+
+  &.no-padding { padding: 0; }
+  &.no-bottom-padding { padding-bottom: 0; }
+  &.no-top-padding { 
+    padding-top: 0; 
+    margin-top: -1px; 
+  }
+  
+  &.half-padding { padding: $space*3 0; }
+  &.half-padding-no-bottom { 
+    padding-top: $space*3; 
+    padding-bottom: 0; 
+  }
+  &.half-padding-no-top { 
+    margin-top: -1px; 
+    padding-bottom: $space*3; 
+    padding-top: 0; 
+  }  
+  
+  .box { padding-top: $space*5; }
+  
+  &.aqua { 
+    color: $white;
+    background-color: $aqua; 
+    
+    .box { 
+      border-color: $white; 
+      
+      h2 { color: $white; }
+      p { color: $navy; }
+    }
+  }
+  
+  &.navy { 
+    color: $white;
+    background-color: $navy; 
+  }
+  
+  &.light-gray { 
+    color: $navy;
+    background-color: $light-gray; 
+  }
+  
+  &.off-white { 
+    color: $navy;
+    background-color: $off-white;
+  }  
+}
+
+// Large Image with Box 
+.large-image-with-box {
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: $space-double 0;
+  width: 100%;
+  
+  .box { 
+    background-color: $white;
+    border-bottom: 6px solid $navy;
+    margin-bottom: 0; 
+    text-align: left;
+    
+    h2 { margin-bottom: 0; }
+    
+    .text-button { margin-top: $space-double; }
+  }
+  
+  a.box {
+    &:hover,
+    &:focus {
+      border-bottom: 6px solid $yellow;      
+    }
+  }
+}
+
+
+@media screen and (min-width: $bp-large) {
+  // All boxes
+  .box {
+    flex-grow: 1;
+    flex-basis: 100px;
+    margin: 0 $space-double 0 0; 
+    
+    &:last-child { margin-right: 0; }
+  }
+  
+  .repeatable-boxes { 
+    padding: $desktop-buffer 0; 
+
+    &.half-padding { padding: $space*5 0; }
+    &.half-padding-no-bottom { 
+      padding-top: $space*5; 
+      padding-bottom: 0; 
+    }
+    &.half-padding-no-top { 
+      margin-top: -1px; 
+      padding-bottom: $space*5; 
+      padding-top: 0; 
+    }    
+  }
+  
+  // Large Image with Box 
+  .large-image-with-box {
+    padding: $desktop-buffer 0;
+    
+    .box { 
+      max-width: 576px;
+      padding: $space*4;
+    }
+  }
+}

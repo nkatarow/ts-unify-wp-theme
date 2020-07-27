@@ -1,0 +1,16 @@
+.careers-listing {
+  text-align: center;
+  
+  .level-5 { margin-bottom: $space; }
+  
+  p { margin-bottom: $space-half; }
+  
+  a {
+    color: $white; 
+    
+    &:hover,
+    &:focus {
+      color: $navy;
+    }
+  }
+}

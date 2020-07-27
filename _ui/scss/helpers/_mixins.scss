@@ -1,0 +1,32 @@
+/* ==========================================================================
+   HELPERS/_MIXINS.SCSS
+   ========================================================================== */
+
+@mixin center($center: 'all') {
+    position: absolute;
+
+    @if $center == 'all' {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    } @else if $center == 'horizontal' {
+        // top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    } @else if $center == 'vertical' {
+        // left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+
+    // keeps background from busting out of border
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+}

@@ -1,0 +1,61 @@
+/* ==========================================================================
+COMPONENTS/_INSIGHTS-LIST.SCSS
+========================================================================== */
+
+#insights-landing,
+.insights-list {
+  &.off-white { background-color: $off-white; }
+  
+  + div .button { 
+    display: block; 
+    margin: $space-double 0;
+  }
+
+  a.box {
+    background-color: transparent; 
+    
+    &.insight {
+      
+      .level-5 {
+        color: $gray;
+        margin: $space 0 $space 0;
+        
+        span { color: $dark-gray; }
+      }
+      
+      .large { 
+        color: $navy;
+        margin: 0 0 $space; 
+        transition: color 250ms ease-out;
+      }
+
+      &:hover,
+      &focus {
+        border-bottom: 0;
+        box-shadow: 0 0 0 0;
+
+        img { border-bottom: 6px solid $yellow; }
+        .large { color: $aqua; }
+      }
+    }
+  
+    &:hover,
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}
+
+@media screen and (min-width: $bp-large) {
+  #insights-landing,
+  .insights-list {
+    padding: $space*6 0 $space-double;
+    text-align: center; 
+
+    div:nth-child(2) {
+      margin-top: $space*4;
+      
+      .button { display: inline-block; }
+    }
+  }
+}

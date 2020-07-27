@@ -1,0 +1,16 @@
+{% block content %}
+	<section class="copy-block columns {{ module.color_scheme }} {{ module.spacing_options }}">
+    <div class="container flex {{ module.number_of_columns }} {{ module.container_width }}">
+      <div>{{ module.column_one }}</div>
+      <div>{{ module.column_two }}</div>
+
+      {% if module.number_of_columns == "three-columns" or module.number_of_columns == "four-columns" %}
+        <div>{{ module.column_three }}</div>
+      {% endif %}
+      
+      {% if module.number_of_columns == "four-columns" %}
+        <div>{{ module.column_four }}</div>
+      {% endif %}
+    </div>
+  </section>
+{% endblock %}

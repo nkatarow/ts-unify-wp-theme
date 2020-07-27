@@ -1,0 +1,26 @@
+{% block content %}
+
+	<section class="insights-list repeatable-boxes {{ module.background_color }}">
+
+    <div class="container margin-bottom">
+
+			<p><span class="full-width-level-5">Related Consultants</span></p>
+
+      <div class="flex">
+    		{% set count = 0 %}
+
+        {% for article in module.select_people %}
+      			<a href="{{ article.link }}" class="box full insight">
+      				<img src="{{TimberImage(article.poster_image).src}}" alt="{{TimberImage(article.poster_image).alt}}" />
+
+              <p class="level-5">
+								{{ article.job_title }}
+              </p>
+      				<p class="large">{{ article.title }}</p>
+      			</a>
+        {% endfor %}
+      </div>
+
+    </div>
+  </section>
+{% endblock %}

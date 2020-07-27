@@ -1,0 +1,201 @@
+{% extends "base.twig" %}
+
+{% block content %}
+  <link rel="stylesheet" href="{{site.theme.link}}/_ui/scss/style-guide.css" type="text/css" media="all">
+
+  <section class="container margin-top">
+    <h1 class="level-1 aqua">{{ page_title }}</h1>
+  </section>
+
+  <section id="colors" class="container margin-top">
+    <h2 class="level-2 aqua">Color Palette</h2>
+    <p>Each color below includes both the hex value and the SASS variable name for that color.</p>
+    
+    <div class="sg-pattern">
+      <h3 class="level-3 navy">Brand Colors</h3>
+      <div class="sg-pattern-example">
+        <ul class="sg-colors">
+          <li>
+            <span class="sg-swatch" style="background: #143250;"></span>
+            <p class="sg-label">
+              $navy <br>
+              #143250
+            </p>
+          </li>
+          <li>
+            <span class="sg-swatch" style="background: #1dc2bb;"></span>
+            <p class="sg-label">
+              $aqua <br>
+              #1dc2bb
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="sg-pattern">
+      <h3 class="level-3 navy">Neutral Colors</h3>
+      
+      <div class="sg-pattern-example">
+        <ul class="sg-colors">
+          <li>
+            <span class="sg-swatch" style="background: #fff;"></span>
+            <p class="sg-label">
+              $white <br>
+              #ffffff
+            </p>
+          </li>
+          <li>
+            <span class="sg-swatch" style="background: #f5f5f5;"></span>
+            <p class="sg-label">
+              $off-white <br>
+              #f5f5f5
+            </p>
+          </li>
+          <li>
+            <span class="sg-swatch" style="background: #e6e6e6;"></span>
+            <p class="sg-label">
+              $light-gray <br>
+              #e6e6e6
+            </p>
+          </li>
+          <li>
+            <span class="sg-swatch" style="background: #c2c2c2;"></span>
+            <p class="sg-label">
+              $gray <br>
+              #c2c2c2
+            </p>
+          </li>
+          <li>
+            <span class="sg-swatch" style="background: #69747c;"></span>
+            <p class="sg-label">
+              $dark-gray <br>
+              #69747c
+            </p>
+          </li>
+          <li>
+            <span class="sg-swatch" style="background: #000;"></span>
+            <p class="sg-label">
+              $black <br>
+              #000
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="sg-pattern">
+      <h3 class="level-3 navy">Utility Colors</h3>
+      
+      <div class="sg-pattern-example">
+        <ul class="sg-colors">
+          <li>
+            <span class="sg-swatch" style="background: #fced1e;"></span>
+            <p class="sg-label">
+              $yellow <br>
+              #fced1e
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>	
+
+  <section id="typography" class="sg-pattern container margin-top">
+    <h2 class="level-2 aqua">Typography</h2>
+    
+    <div class="sg-pattern">
+      <h3 class="level-3 navy">Text Fonts</h3>
+      <p>All fonts are listed below along with their associated font-weights and/or styles.</p>
+      
+      <div class="sg-pattern-example">
+        <p>
+          Circular Medium<br />
+          <span style="font-style: italic;">Circular Medium Italic (300)</span>
+        </p>
+          
+        <p style="font-weight: 500;">
+          Circular Bold<br />
+          <span style="font-style: italic;">Circular Bold Italic (500)</span>
+        </p>
+            
+        <p style="font-weight: 700;">
+          Circular Black<br />
+          <span style="font-style: italic;">Circular Black Italic (700)</span>
+        </p>
+              
+        <p style="font-family: 'Circular-Book';">
+          Circular Book<br />
+          <span style="font-style: italic;">Circular Book Italic (300)</span>
+        </p>
+                
+        <p style="font-family: 'PT Serif';">PT Serif (300)</p>
+      </div>
+    </div>
+    
+    <div class="sg-pattern">
+      <h3 class="level-3 navy">Icon Font</h3>
+      <p>Each icon shows the icon itself, along with the CSS classname needed to access it.</p>
+
+      <p><span class="icon-chevron-down"></span> .icon-chevron-down</p>
+      <p><span class="icon-chevron-left"></span> .icon-chevron-left</p>
+      <p><span class="icon-chevron-right"></span> .icon-chevron-right</p>
+      <p><span class="icon-facebook"></span> .icon-facebook</p>
+      <p><span class="icon-reverse-facebook"></span> .icon-reverse-facebook</p>
+      <p><span class="icon-glassdoor"></span> .icon-glassdoor</p>
+      <p><span class="icon-linkedin"></span> .icon-linkedin</p>
+      <p><span class="icon-reverse-linkedin"></span> .icon-reverse-linkedin</p>
+      <p><span class="icon-reverse-twitter"></span> .icon-reverse-twitter</p>
+      <p><span class="icon-magnifying-glass"></span> .icon-magnifying-glass</p>
+      <p><span class="icon-o"></span> .icon-instagram</p>
+    </div>
+    
+    <div class="sg-pattern">
+      <h3 class="level-3 navy">Headers</h3>
+      <p>Header classes are independent of the base element styles. This means that any of the styles below can be used with any text element depending on which you need to use based on semantic meaning. The numbers after are the font sizes in smaller viewports versus larger ones.</p>
+
+      <div class="sg-pattern-example">
+        <p class="level-1">Level 1 Header (36px/72px)</p>
+        <p class="level-2">Level 2 Header (28px/60px)</p>
+        <p class="level-3">Level 3 Header (21px/36px)</p>
+        <p class="level-4">Level 4 Header (18px/28px)</p>
+        <p class="level-5">Level 5 Header (12px/14px)</p>
+        <p class="trailing-line">Trailing Line</p>
+        <p class="underline">Underline</p>
+      </div>
+  
+      <p class="full-width-level-5">Full Width Level 5</p>
+
+      <h2 style="text-align: center;">
+        <p class="level-3 hanging-header">Hanging Header</p>
+      </h2>
+    </div>
+
+    <div class="sg-pattern">
+      <h3 class="level-3 navy">Paragraphs</h3>
+
+      <div class="sg-pattern-example">
+        <p>A <strong>standard paragraph element</strong> is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences or perhaps an <a href="#">inline link</a>. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>
+
+        <p class="large">A paragraph with the class of <strong>large</strong> is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences or perhaps an <a href="#">inline link</a>. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>
+      </div>
+    </div>  
+  </section>
+          
+  <section id="buttons" class="sg-pattern container margin-top">
+    <h2 class="level-2 aqua">Buttons</h2>
+    
+    <div class="sg-pattern-example">
+      <p><a href="#" class="text-button">Text Button</a></p>
+      <p><a href="#">Inline Link</a></p>
+      <button class="">Button</button>
+    </div>
+  </section>
+
+  <section class="container margin-top">
+    <h2 class="level-2 aqua">Flexible Content Modules</h2>
+  </section>
+  
+  {% include "/templates/components/flexible-content-modules.twig" %}		
+
+{% endblock %}

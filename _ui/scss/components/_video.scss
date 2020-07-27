@@ -1,0 +1,60 @@
+/* ==========================================================================
+COMPONENTS/_VIDEO.SCSS
+========================================================================== */
+
+.video {
+  &.background {
+    background-color: $navy;
+    color: $white; 
+    
+    iframe { margin-bottom: 0; }
+    
+    .overlay {
+      margin: 0 auto -1px;
+      padding: $space*4 $space-double; 
+      width: 90%;
+    }
+  }
+  
+  &.hero { margin-top: -60px; }
+}
+
+@media screen and (min-width: $bp-large) {
+  .video {
+    
+    &.background {
+      color: $navy; 
+      overflow: hidden;
+      padding: 0;
+      position: relative;
+
+      iframe {
+        box-sizing: border-box;
+        height: 56.25vw;
+        left: 50%;
+        min-height: 101%;
+        min-width: 101%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        top: 50%;
+        width: 177.77777778vh;
+      }
+
+      .overlay {
+        @include center(all);
+        max-width: 800px;
+        width: 100%;
+        z-index: 2;
+      }    
+    }
+
+    &.hero { 
+      margin-top: -90px; 
+      
+      .overlay {
+        @include center(horizontal);
+        top: 130px;        
+      }
+    }
+  }
+}

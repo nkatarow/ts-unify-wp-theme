@@ -1,0 +1,109 @@
+/* ==========================================================================
+   COMPONENTS/_LAYOUT.SCSS
+   ========================================================================== */
+
+html { overflow-x: hidden; }
+
+#content { 
+	min-height: calc(100vh - 119px);
+	padding-top: 60px; 
+}
+
+// If we're logged in and the admin bar is showing, move everying down for it.
+.logged-in #content { min-height: calc(100vh - 181px); }
+
+.container {
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: $max-width;
+	padding-left: $space-double;
+	padding-right: $space-double;
+	width: 100%; 
+	 
+  // Spacing
+	&.margin-top { margin-top: $mobile-buffer; }
+	&.margin-bottom { margin-bottom: $mobile-buffer; }
+	&.margin-both { 
+		margin-top: $mobile-buffer; 
+		margin-bottom: $mobile-buffer; 
+	}
+
+	&.no-padding { padding: 0; }
+	&.padding-top { padding-top: $mobile-buffer; }
+	&.padding-bottom { padding-bottom: $mobile-buffer; }
+	&.padding-both { 
+		padding-top: $mobile-buffer; 
+		padding-bottom: $mobile-buffer; 
+	}
+  
+  &.half-padding { padding: $space*3 0; }
+  &.half-padding-no-bottom { 
+    padding-top: $space*3; 
+    padding-bottom: 0; 
+  }
+  &.half-padding-no-top { 
+    margin-top: -1px; 
+    padding-bottom: $space*3; 
+    padding-top: 0; 
+  }  
+}
+
+.flex { 
+	display: flex; 
+	flex-direction: column;
+}
+
+
+@media screen and (min-width: $bp-large) {
+	#content { 
+		min-height: calc(100vh - 94px);
+		padding-top: 90px; 
+	}
+
+	.container {
+    // Widths
+    &.fifty-percent-width { width: 50%; }
+    &.sixty-five-percent-width { width: 65%; }
+    &.seventy-five-percent-width { width: 75%; }
+    &.eighty-five-percent-width { width: 85%; }
+      
+    // Spacing
+		&.margin-top { margin-top: $desktop-buffer; }
+		&.margin-bottom { margin-bottom: $desktop-buffer; }
+		&.margin-both { 
+			margin-top: $desktop-buffer; 
+			margin-bottom: $desktop-buffer; 
+		}
+		&.padding-top { padding-top: $desktop-buffer; }
+		&.padding-bottom { padding-bottom: $desktop-buffer; }
+		&.padding-both { 
+			padding-top: $desktop-buffer; 
+			padding-bottom: $desktop-buffer; 
+		}
+
+    &.half-padding { padding: $space*5 0; }
+    &.half-padding-no-bottom { 
+      padding-top: $space*5; 
+      padding-bottom: 0; 
+    }
+    &.half-padding-no-top { 
+      margin-top: -1px; 
+      padding-bottom: $space*5; 
+      padding-top: 0; 
+    }  
+	}
+
+	// If we're logged in and the admin bar is showing, move everying down for it.
+	// .logged-in #content { min-height: calc(100vh - 127px); }
+
+	.flex { flex-direction: row; }
+}
+
+@media screen and (min-width: $bp-xxl) {
+	.container {
+		padding-left: 0;
+		padding-right: 0;
+  }
+}

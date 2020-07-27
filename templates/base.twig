@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]>    <html dir="ltr" lang="en-US" class="no-js ie8 oldie"> <![endif]-->
+<!--[if IE 9 ]>    <html dir="ltr" lang="en-US" class="no-js ie9 oldie"> <![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html dir="ltr" lang="en-US" class="no-js"><!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+  <title>
+    {{ wp_title }}
+  </title>
+  <link rel="home" href="{{ siteUrl }}" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta name="theme-color" content="#143250">
+  <link href="{{ entry.url }}" rel="canonical" />
+  <link rel="apple-touch-icon" sizes="180x180" href="{{site.theme.link}}/_ui/img/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" href="{{site.theme.link}}/_ui/img/favicon/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="{{site.theme.link}}/_ui/img/favicon/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="{{site.theme.link}}/_ui/img/favicon/manifest.json">
+  <link rel="mask-icon" href="{{site.theme.link}}/_ui/img/favicon/safari-pinned-tab.svg" color="#143250">
+  <link rel="pingback" href="{{site.pingback_url}}" />
+
+  {# Test to see if we're in dev mode... #}
+  {% if (env == 'development') %}
+  {# If so, provide concatonated, header CSS/JS files #}
+  <link rel="stylesheet" href="{{site.theme.link}}/_ui/compiled/main.css" type="text/css" media="all">
+  {% else %}
+  {# If not, provide concatonated, minified/uglified header CSS/JS files #}
+  <link id="stylesheet" rel="stylesheet" href="{{site.theme.link}}/_ui/dist/main.min.2020519-1589908715339.css" type="text/css" media="all">
+  {% endif %}
+
+  {{function('wp_head')}}
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112611898-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-112611898-1');
+  </script>
+</head>
+
+
+<body class="{{body_class}}" data-template="base.twig">
+  {# GLOBAL NAV #}
+  {% block header %}
+  <header class="header">
+    <div class="top-bar container">
+      <a class="logo" href="{{site.url}}" rel="home">
+        <svg title="{{site.name}}" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="128.3px" height="48.7px" viewBox="0 0 128.3 48.7" style="enable-background:new 0 0 128.3 48.7;" xml:space="preserve">
+          <g><g>
+            <path class="st0" d="M32.1,0.3c-2.4,0-4.8,0.5-6.9,1.4c-2.1-0.9-4.4-1.4-6.9-1.4c-9.9,0-17.9,8-17.9,17.9c0,5.8,2.7,10.9,7,14.2c1,8.9,8.6,15.9,17.8,15.9S42,41.4,43,32.4c4.3-3.3,7-8.4,7-14.2C50,8.4,42,0.3,32.1,0.3z M33.1,14.4c-2.4-1.2-5.1-1.9-7.9-1.9c-2.9,0-5.5,0.7-7.9,1.9c1.1-4.3,4.1-7.8,7.9-9.8C29.1,6.5,32,10.1,33.1,14.4z M33.6,17.6c0,0.2,0,0.4,0,0.6c0,6-3.4,11.2-8.4,13.7c-5-2.5-8.4-7.7-8.4-13.7c0-0.2,0-0.4,0-0.6c2.4-1.6,5.3-2.5,8.4-2.5C28.3,15.1,31.2,16,33.6,17.6zM7.4,28.9C4.7,26.2,3,22.4,3,18.2C3,9.8,9.9,2.9,18.3,2.9c1.3,0,2.6,0.2,3.8,0.5c-4.2,2.9-7.2,7.5-7.8,12.8C10.4,19.2,7.8,23.8,7.4,28.9z M9.9,30.4c0-4.2,1.7-7.9,4.4-10.7c0.5,5.6,3.5,10.4,7.8,13.4c-1.2,0.3-2.5,0.5-3.8,0.5c-3.1,0-6-0.9-8.4-2.5C9.9,30.8,9.9,30.6,9.9,30.4z M25.2,45.7c-7.1,0-13.1-4.9-14.8-11.4c2.4,1.2,5.1,1.9,7.9,1.9c2.4,0,4.8-0.5,6.9-1.4c2.1,0.9,4.4,1.4,6.9,1.4c2.9,0,5.5-0.7,7.9-1.9C38.3,40.9,32.3,45.7,25.2,45.7z M40.5,31c-2.4,1.6-5.3,2.5-8.4,2.5c-1.3,0-2.6-0.2-3.8-0.5c4.4-3,7.4-7.8,7.8-13.4c2.7,2.8,4.4,6.5,4.4,10.7C40.5,30.6,40.5,30.8,40.5,31zM43.1,28.9c-0.4-5.2-3-9.7-6.9-12.7c-0.6-5.3-3.6-10-7.8-12.8c1.2-0.3,2.5-0.5,3.8-0.5c8.5,0,15.3,6.9,15.3,15.3C47.4,22.4,45.8,26.2,43.1,28.9z"/>
+          </g><g><g>
+            <path class="st0" d="M93.4,34.1h3.9V18.9h-3.9V34.1z M95.4,11.2c-1.4,0-2.5,1.1-2.5,2.5c0,1.3,1.1,2.4,2.5,2.4c1.4,0,2.5-1.1,2.5-2.4C97.8,12.3,96.7,11.2,95.4,11.2z"/>
+          </g><g>
+            <path class="st0" d="M102.8,34.1h4V22.2h3.5v-3.3h-3.5V17c0-2.1,1.8-2.3,2.3-2.3c0.5,0,0.9,0,1.2,0.1v-3.3c-0.4-0.1-1.1-0.3-2-0.3c-3.3,0-5.5,2.2-5.5,5.6v1.9h-2.6v3.3h2.6V34.1z"/>
+          </g><g>
+            <path class="st0" d="M114.2,40.2h4.2l9.6-21.4h-4.2l-3.9,9.3l-4.2-9.3h-4.4l6.5,13.4L114.2,40.2z"/>
+          </g><g><g>
+            <path class="st0" d="M55.4,18.9v7.6c0,4.6,3.4,8.1,8,8.1s8-3.5,8-8.1v-7.6h-3.9v7.6c0,2.2-1.3,4.5-4.1,4.5c-2,0-4.1-1.4-4.1-4.5v-7.6H55.4z"/>
+          </g></g><g><g>
+            <path class="st0" d="M86.2,34.1h3.9v-7.6c0-4.6-3.4-8.1-8-8.1c-4.6,0-8,3.5-8,8.1v7.6H78v-7.6c0-2.2,1.3-4.5,4.1-4.5c2,0,4.1,1.4,4.1,4.5V34.1z"/>
+          </g></g></g></g><g></g><g></g><g></g><g></g><g></g><g></g>
+        </svg>
+      </a>
+
+      {% if post.page_tagline %}
+        <p class="page-title">{{ post.page_tagline }}</p>
+      {% else %}
+        {% if post.post_type == "insightsarticles" %}
+          <p class="page-title">Insights</p>
+        {% elseif post.post_type == "careers"%}
+          <p class="page-title">Join Us</p>
+        {% elseif post.post_type == "bios" %}
+          <p class="page-title">Our People</p>
+        {% elseif post.parent == "Capabilities"%}
+          <p class="page-title">Capabilities</p>
+        {% else %}
+          <h1 class="page-title">{{ wp_title }}</h1>
+        {% endif %}
+      {% endif %}
+
+      <button id="primary-trigger" class="hamburger hamburger--spin" type="button">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
+    </div>
+
+    <div id="primary">
+      <div>
+        <nav id="nav-main" class="nav-main" role="navigation">
+          {% include "/templates/components/menu.twig" with {'menu': menu.get_items} %}
+        </nav><!-- #nav -->
+
+        <div class="secondary">
+          <nav id="nav-contact" class="nav-contact" role="navigation">
+            <ul>
+              <li>
+                <h2 class="level-5 aqua">Email</h2>
+                <a href="mailto:{{ options.email }}" class="level-4">{{ options.email }}</a>
+              </li>
+              <li>
+                <h2 class="level-5 aqua">Phone</h2>
+                <a href="tel:{{ options.phone|replace({'(': '', ')': '', '–': '', '-': '', ' ': ''}) }}" class="level-4">{{ options.phone }}</a>
+              </li>
+            </ul>
+          </nav>
+
+          <nav id="nav-social" class="nav-social" role="navigation">
+            {% include "/templates/components/social.twig" with {'social': social.get_items} %}
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  {% endblock %}
+
+
+  {# BODY #}
+  <section id="content" role="main" class="content-wrapper">
+    {% if title %}<h1>{{title}}</h1>{% endif %}
+    {% block content %}
+      Sorry, no content
+    {% endblock %}
+  </section>
+
+
+  {# FOOTER #}
+  <footer>
+    <div>
+      <ul class="social-icons">
+        {% if options.facebook_url %}<li><a href="{{ options.facebook_url }}" class="icon-facebook" target="_blank"></a></li>{% endif %}
+        {% if options.glassdoor_url %}<li><a href="{{ options.glassdoor_url }}" class="icon-glassdoor" target="_blank"></a></li>{% endif %}
+        {% if options.linkedin_url %}<li><a href="{{ options.linkedin_url }}" class="icon-linkedin" target="_blank"></a></li>{% endif %}
+        {% if options.instagram_url %}<li><a href="{{ options.instagram_url }}" class="icon-instagram" target="_blank"></a></li>{% endif %}
+      </ul>
+
+      <a href="mailto:{{ options.email }}" class="email">{{ options.email }}</a>
+      <a href="tel:{{ options.phone|replace({'(': '', ')': '', '–': '', '-': '', '.': '', ' ': ''}) }}" class="email">{{ options.phone }}</a>
+      <small class="level-5">&copy; {{ "now"|date('Y') }} Unify Consulting. All rights reserved.</small>
+    </div>
+  </footer>
+  {{ function('wp_footer') }}
+
+  {% if env == 'development' %}
+  {# Provide the compiled JS file. #}
+  <script src="{{site.theme.link}}/_ui/compiled/scripts.js"></script>
+  {% else %}
+  {# Otherwise, provide the compiled and uglified JS file. #}
+  <script id="scripts" src="{{site.theme.link}}/_ui/dist/scripts.min.2020519-1589908715339.js"></script>
+  {% endif %}
+</body>
+</html>

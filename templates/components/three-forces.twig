@@ -1,0 +1,22 @@
+{% block content %}
+	<section id="three-forces" class="repeatable-boxes {{ module.color_scheme }} {{ module.spacing_options }}">
+    <div class="container flex">
+      <div class="img">
+			  <img src="{{TimberImage(module.forces_image).src}}" alt="{{TimberImage(module.forces_image).alt}}" />
+      </div>
+
+			<div class="box full">
+				<h2 class="level-4">{{ module.header_one }}</h2>
+				<p>{{ module.description_one }}</p>
+			</div>
+			<div class="box full">
+				<h2 class="level-4">{{ module.header_two }}</h2>
+				<p>{{ module.description_two }}</p>
+			</div>
+			<div class="box full">
+				<h2 class="level-4">{{ module.header_three }}</h2>
+				<p>{{ module.description_three }}</p>
+			</div>
+    </div>
+	</section>
+{% endblock %}

@@ -1,0 +1,78 @@
+/* ==========================================================================
+   COMPONENTS/_COPY-BLOCK.SCSS
+   ========================================================================== */
+
+.copy-block {
+  padding: $mobile-buffer 0; 
+  
+  &.no-padding { padding: 0; }
+  &.no-bottom-padding { padding-bottom: 0; }
+  &.no-top-padding { 
+    padding-top: 0; 
+    margin-top: -1px; 
+  }
+
+  &.half-padding { padding: $space*3 0; }
+  &.half-padding-no-bottom { 
+    padding-top: $space*3; 
+    padding-bottom: 0; 
+  }
+  &.half-padding-no-top { 
+    margin-top: -1px; 
+    padding-bottom: $space*3; 
+    padding-top: 0; 
+  }
+  
+  &.aqua { 
+    color: $white;
+    background-color: $aqua; 
+  }
+  
+  &.navy { 
+    color: $white;
+    background-color: $navy; 
+  }
+  
+  &.light-gray { 
+    color: $navy;
+    background-color: $light-gray; 
+  }
+  
+  &.off-white { 
+    color: $navy;
+    background-color: $off-white;
+  }
+  
+  p:last-child { margin-bottom: 0; }
+
+  &.columns .flex > div { 
+    margin-bottom: $mobile-buffer/2;
+  }
+}
+
+@media screen and (min-width: $bp-large) {
+  .copy-block { 
+    padding: $desktop-buffer 0; 
+
+    &.half-padding { padding: $space*5 0; }
+    &.half-padding-no-bottom { 
+      padding-top: $space*5; 
+      padding-bottom: 0; 
+    }
+    &.half-padding-no-top { 
+      margin-top: -1px; 
+      padding-bottom: $space*5; 
+      padding-top: 0; 
+    }
+    
+    &.columns {
+      .flex {
+        justify-content: space-between;      
+        
+        &.two-columns > * { width: 49%; }
+        &.three-columns > * { width: 31.5%; }
+        &.four-columns > * { width: 23.5%; }
+      }
+    }
+  }
+}

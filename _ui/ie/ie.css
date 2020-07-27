@@ -1,0 +1,14 @@
+html { overflow-x: hidden; }
+body { border-top: 3px solid #1dc2bb; }
+header #primary { 
+  background-image: url(/wp-content/themes/unify/_ui/img/global/pattern.jpg);
+  background-size: 100%;
+}
+
+a img { border: none !important; }
+
+select::-ms-expand { display: none; }
+
+@media screen and (min-width: 800px) {
+  body { border-top: 6px solid #1dc2bb; }
+}

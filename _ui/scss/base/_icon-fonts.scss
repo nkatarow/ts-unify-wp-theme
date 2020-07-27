@@ -1,0 +1,110 @@
+@font-face {
+	font-family: "iconfont";
+	src: url('../fonts/iconfont.eot');
+	src: url('../fonts/iconfont.eot?#iefix') format('eot'),
+		url('../fonts/iconfont.woff2') format('woff2'),
+		url('../fonts/iconfont.woff') format('woff'),
+		url('../fonts/iconfont.ttf') format('truetype'),
+		url('../fonts/iconfont.svg#iconfont') format('svg');
+}
+
+@mixin icon-styles {
+	font-family: "iconfont";
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	// speak: none; // only necessary if not using the private unicode range (firstGlyph option)
+	text-decoration: none;
+	text-transform: none;
+}
+
+%icon {
+	@include icon-styles;
+}
+
+@function icon-char($filename) {
+	$char: "";
+
+	@if $filename == chevron-down {
+		$char: "\E001";
+	}
+	@if $filename == chevron-left {
+		$char: "\E002";
+	}
+	@if $filename == chevron-right {
+		$char: "\E003";
+	}
+	@if $filename == facebook {
+		$char: "\E004";
+	}
+	@if $filename == glassdoor {
+		$char: "\E005";
+	}
+	@if $filename == instagram {
+		$char: "\E006";
+	}
+	@if $filename == linkedin {
+		$char: "\E007";
+	}
+	@if $filename == magnifying-glass {
+		$char: "\E008";
+	}
+	@if $filename == reverse-facebook {
+		$char: "\E009";
+	}
+	@if $filename == reverse-linkedin {
+		$char: "\E00A";
+	}
+	@if $filename == reverse-twitter {
+		$char: "\E00B";
+	}
+
+	@return $char;
+}
+
+@mixin icon($filename, $insert: before, $extend: true) {
+	&:#{$insert} {
+		@if $extend {
+			@extend %icon;
+		} @else {
+			@include icon-styles;
+		}
+		content: icon-char($filename);
+	}
+}
+
+.icon-chevron-down {
+	@include icon(chevron-down);
+}
+.icon-chevron-left {
+	@include icon(chevron-left);
+}
+.icon-chevron-right {
+	@include icon(chevron-right);
+}
+.icon-facebook {
+	@include icon(facebook);
+}
+.icon-glassdoor {
+	@include icon(glassdoor);
+}
+.icon-instagram {
+	@include icon(instagram);
+}
+.icon-linkedin {
+	@include icon(linkedin);
+}
+.icon-magnifying-glass {
+	@include icon(magnifying-glass);
+}
+.icon-reverse-facebook {
+	@include icon(reverse-facebook);
+}
+.icon-reverse-linkedin {
+	@include icon(reverse-linkedin);
+}
+.icon-reverse-twitter {
+	@include icon(reverse-twitter);
+}

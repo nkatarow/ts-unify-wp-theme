@@ -1,0 +1,35 @@
+{% block content %}
+	<section class="careers-listing copy-block columns {{ module.color_scheme }} {{ module.spacing_options }}">
+    <div class="container flex three-columns eventy-five-percent-width">
+      {% if careerlistingssea %}
+        <div>
+          <h2 class="level-5 navy">Seattle</h2>
+          
+          {% for job in careerlistingssea %}
+            <p class="large"><a href="{{ job.link }}">{{ job.title }}</a></p>
+          {% endfor %}
+        </div>
+      {% endif %}
+      
+      {% if careerlistingssf %}
+        <div>
+          <h2 class="level-5 navy">San Francisco</h2>
+          
+          {% for job in careerlistingssf %}
+            <p class="large"><a href="{{ job.link }}">{{ job.title }}</a></p>
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      {% if careerlistingssouix %}
+        <div>
+          <h2 class="level-5 navy">Souix Falls</h2>
+          
+          {% for job in careerlistingssouix %}
+            <p class="large"><a href="{{ job.link }}">{{ job.title }}</a></p>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </section>
+{% endblock %}

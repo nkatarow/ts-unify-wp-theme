@@ -1,0 +1,24 @@
+{% block content %}
+
+<section class="people-slider insights-list">
+  <div class="container padding-both">
+    <h2 class="level-3">Featured People</h2>
+    
+    <div class="people-carousel">
+
+      {% for person in peopleslider %}
+  			<a href="{{ person.link }}" class="box insight full" target="{{ person.link.target }}">
+          <div class="img">
+  					<img src="{{TimberImage(person.poster_image).src}}" alt="{{TimberImage(person.poster_image).alt}}" />
+          </div>
+          <p class="level-5">{{ person.job_title }}</p>
+          <h3 class="level-4">{{ person.title }}</h3>
+        </a>
+      {% endfor %}
+
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+    

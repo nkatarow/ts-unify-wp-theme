@@ -1,0 +1,13 @@
+{% if social %}
+	<h2 class="level-5 aqua">Social</h2>
+	<ul>
+	{% for item in social %}
+		<li class="{{ item.classes | join(' ') }}">
+			<a target="{{ item.target }}" href="{{ item.link }}" class="level-4">
+				{{ item.title }}
+			</a>
+			{% include "/templates/components/social.twig" with {'social': item.get_children} %}
+		</li>
+	{% endfor %}
+	</ul>
+{% endif %}

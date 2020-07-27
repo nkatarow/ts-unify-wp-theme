@@ -1,0 +1,122 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+	<article class="article post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
+		<section class="article-content">
+      <div class="article-header container margin-top{% if post.post_type == 'careers' %} capabilities{% endif %}">
+        <p class="level-5">
+          {% if post.post_type == 'insightsarticles' %}
+            {% for cat in post.categories %}
+              {% if cat.parent == 0 %}
+                <span>{{ cat.name }} </span>
+              {% else %}
+                {{ cat.name }}
+              {% endif %}
+            {% endfor %}
+          {% elseif  post.post_type == 'bios' %}
+            {{ post.job_title }}
+          {% endif %}
+        </p>
+
+				<h1 class="level-2">{{ post.title }}</h1>
+      </div>
+
+      {% if post.post_type == 'insightsarticles' %}
+        <div class="sharing container">
+          <h3 class="level-5">Share</h3>
+          <ul>
+            <li><a href="https://www.facebook.com/sharer/sharer.php?u={{ post.link }}" class="icon-reverse-facebook" target="_blank"></a></li>
+            <li><a href="http://twitter.com/share?text={{ post.title }}&url={{ post.link }}" class="icon-reverse-twitter" target="_blank"></a></li>
+            <li><a href="https://www.linkedin.com/cws/share?url={{ post.link }}" class="icon-reverse-linkedin" target="_blank"></a></li>
+            {% if post.upload_document %}
+              <li><a href="{{ TimberImage(post.upload_document).src }}" class="button" target="_blank">{{ TimberImage(post.upload_document).title }}</a></li>
+            {% endif %}
+          </ul>
+        </div>
+      {% endif %}
+
+      {% if post.post_type == 'insightsarticles' or post.post_type == 'bios' %}
+        {% if not post.hide_poster_image %}
+          <div class="poster">
+            <img src="{{ TimberImage(post.poster_image).src }}" alt="{{ TimberImage(post.poster_image).alt }}">
+          </div>
+        {% endif %}
+      {% endif %}
+
+			<div class="article-body container{% if post.post_type == 'careers' %} careers{% endif %}">
+        <div class="main">
+				  {{ post.content }}
+        </div>
+
+        <aside>
+          {% if post.get_field('asides') %}
+            {% for aside in post.get_field('asides') %}
+              {% set asideColor = aside.aside_color|sanitize %}
+
+              <div class="aside {{ asideColor|default('') }}">
+                {{ aside.aside_content }}
+              </div>
+            {% endfor %}
+          {% endif %}
+
+          {% if post.get_field('show_logos') %}
+            <h2 class="level-5">Representative Clients</h2>
+            {% for item in post.get_field('logos') %}
+              <img src="{{TimberImage(item).src}}" alt="{{TimberImage(item).alt}}" />
+            {% endfor %}
+          {% endif %}
+
+          {% if post.get_field('featured_consultants') %}
+            <h2 class="level-5">Featured Consultants</h2>
+
+            <div class="insights-list">
+            {% for consultant in post.get_field('featured_consultants') %}
+        			<a href="{{ consultant.link }}" class="box full insight">
+        				<img src="{{TimberImage(consultant.poster_image).src}}" alt="{{TimberImage(consultant.poster_image).alt}}" />
+
+                <p class="level-5">{{ consultant.job_title }}</p>
+        				<p class="large">{{ consultant.title }}</p>
+        			</a>
+            {% endfor %}
+          </div>
+          {% elseif post.post_type == 'bios' %}
+            {% if post.get_field('related') %}
+              <h2 class="level-5">Related</h2>
+              <div class="insights-list">
+                {% for study in post.get_field('related') %}
+            			<a href="{{ study.link }}" class="box full insight">
+            				<img src="{{TimberImage(study.poster_image).src}}" alt="{{TimberImage(study.poster_image).alt}}" />
+
+                    <p class="level-5">
+                      {% for cat in article.categories %}
+                        <span>{{ cat.term_group.name }}</span>{{cat.name}}
+                      {% endfor %}
+                    </p>
+            				<p class="large">{{ study.title }}</p>
+            			</a>
+                {% endfor %}
+              </div>
+            {% endif %}
+          {% endif %}
+        </aside>
+
+			</div>
+
+      <div class="container margin-both back">
+        {% if post.post_type == 'careers' %}
+          <a href="/mailto:hello@unifyconsulting.com" class="button">Submit Your Resume</a>
+        {% else %}
+          {% if not (post.post_type == 'bios' and post.get_field('modules')|length) %}
+            <a href="/insights" class="button">Back</a>
+          {% endif %}
+        {% endif %}
+
+      </div>
+		</section>
+
+    {% include "/templates/components/flexible-content-modules.twig" %}
+
+  </article>
+
+{% endblock %}

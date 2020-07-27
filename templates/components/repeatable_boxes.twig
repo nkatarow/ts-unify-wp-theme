@@ -1,0 +1,31 @@
+{% block content %}
+	<section class="repeatable-boxes {{ module.color_scheme }} {{ module.spacing_options }}">
+    <div class="container flex">
+  		{% for row in module.box %}
+  			{% if row.is_box_a_link %}
+  				<a href="{{ row.link_to.url }}" class="box{% if not row.image_or_icon_spacing %} full{% endif %}" target="{{ module.link_to.target }}">
+  			{% else %}
+  				<div class="box{% if not row.image_or_icon_spacing %} full{% endif %}">
+  			{% endif %}
+  				{% if row.image_or_icon %}
+  					<img src="{{TimberImage(row.image_or_icon).src}}" alt="{{TimberImage(row.image_or_icon).alt}}" />
+  				{% endif %}
+  				
+  				<div>
+  					{% if row.headline %}
+  						<h2 class="level-4">{{ row.headline }}</h2>
+  					{% endif %}
+  					
+  					{% if row.description %}
+  						{{ row.description }}
+  					{% endif %}
+  				</div>
+  			{% if row.is_box_a_link %}
+  				</a>
+  			{% else %}
+  				</div>
+  			{% endif %}
+  		{% endfor %}
+    </div>
+	</section>
+{% endblock %}

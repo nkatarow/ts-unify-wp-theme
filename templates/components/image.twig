@@ -1,0 +1,11 @@
+{% block content %}
+	<section class="image-block">
+    <figure>
+	    <img src="{{TimberImage(module.image).src}}" alt="{{TimberImage(module.image).alt}}" />
+      {% if TimberImage(module.image).caption %}  
+        <figcaption>{{ TimberImage(module.image).caption }}</figcaption>
+      {% endif %}
+    </figure>
+  </section>
+{% endblock %}
+            

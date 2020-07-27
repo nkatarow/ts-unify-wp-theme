@@ -1,0 +1,74 @@
+/* ==========================================================================
+   COMPONENTS/_LOGO-SOUP.SCSS
+   ========================================================================== */
+
+.logo-soup {
+  padding: $mobile-buffer 0;
+	text-align: center;
+  
+	.description {
+		margin: 0 auto;
+		max-width: 80%;
+	}
+	
+	.logo-list {
+    @extend .clearfix;
+    margin-top: $space*4;
+    opacity: 0;
+    height: 100vw;
+    position: relative;
+    transition: opacity 250ms ease;
+    
+    &.playing { opacity: 1; }
+    
+    .logo-row {
+      align-items: center;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      left: 0;
+      min-height: 100px;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    
+      .img {
+        opacity: 0;
+        transform: translate3d(0,25px,0);
+        transition: 
+          opacity 250ms ease-out,
+          transform 250ms ease-out;
+        width: 50%;
+        
+        img { vertical-align: middle; }
+      
+        &.transition-in {
+          opacity: 1;
+          transform: translate3d(0,0,0);
+        }
+      }
+    }
+	}
+}
+
+
+@media screen and (min-width: $bp-large) {
+	.logo-soup {
+		padding: $desktop-buffer 0;
+		
+		.logo-list {
+      height: 10vw;
+
+      .logo-row {
+				margin-top: $space*4;
+        
+	      .img { width: 23%; }
+			}
+		}
+	}
+}
+
+
+@media screen and (min-width: $bp-xl) {
+	.logo-soup { padding: 10em 0; }
+}
